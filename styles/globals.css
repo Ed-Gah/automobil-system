@@ -3,12 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --max-width: 1100px;
+  --max-width: 1512px;
   --border-radius: 12px;
+  --content-width: 1002px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-    --gray-500:
+  --gray-500: ;
+  --app-bg-color: black;
+
+  /* text colors */
+  --header1: 100px;
+  --text-100: #ffffff;
+  --text-200: #f4f2f2;
+  --text-300: #e9e8e8;
+  --text-400: #d9d9d9;
+
+  /* primary colors */
+  --primary-800: #030082;
+
+  /* seconday colors */
+  --secondary-100: #ffffff;
+  --secondary-900: #870000;
 }
 
 * {
@@ -19,19 +35,20 @@
 
 html,
 body {
-  max-width: 90vw;
+  max-width: 100uv;
   overflow-x: hidden;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  background-color: var(--app-bg-color);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    ) */
+  /* rgb(var(--background-start-rgb)); */
 }
 
 a {
@@ -58,5 +75,19 @@ a {
   }
   .carcart {
     @apply grid grid-flow-row 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 gap-5 md:grid-cols-2 sm:grid-cols-1;
+  }
+  .vision-txt {
+    @apply font-medium text-[49px] text-[var(--text-400)] uppercase;
+  }
+  .nav-bar {
+  }
+  .nav-links {
+    @apply text-[18px] font-medium text-[var(--text-400)] uppercase;
+  }
+  .logo {
+    @apply text-[var(--text-400)] font-bold text-[40px] uppercase;
+  }
+  .sell {
+    @apply border-2 border-[var(--secondary-900)] rounded-lg text-[var(--text-400)] uppercase text-center w-full py-2
   }
 }

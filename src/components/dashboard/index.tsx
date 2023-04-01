@@ -1,2 +1,3 @@
 import CarCart from "./CarCart";
-export { CarCart };
+import NavBar from "./NavBar";
+export { CarCart, NavBar };
