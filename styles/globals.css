@@ -82,7 +82,7 @@ a {
   .nav-bar {
   }
   .nav-links {
-    @apply text-[18px] font-medium text-[var(--text-400)] uppercase;
+    @apply text-[18px] font-medium text-[var(--text-400)] uppercase hover:cursor-pointer;
   }
   .logo {
     @apply text-[var(--text-400)] font-bold text-[40px] uppercase;

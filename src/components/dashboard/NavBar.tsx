@@ -20,8 +20,8 @@ export default function NavBar() {
             <div key={i} className=" pr-9">
               <a
                 className={
-                  link.link === "Register"
-                    ? "nav-links border-2 border-[var(--secondary-900)]"
+                  link.name === "Register"
+                    ? "nav-links border-2 border-[var(--secondary-900)] p-4 rounded-lg"
                     : " nav-links"
                 }
                 onClick={() => router.push(`${link.link}`)}
