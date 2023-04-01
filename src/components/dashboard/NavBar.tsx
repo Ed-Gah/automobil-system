@@ -10,28 +10,32 @@ export default function NavBar() {
     { name: "Register", link: "/sign-up" },
   ];
   return (
-    <nav className={`mt-12`}>
-      <div className="flex justify-between">
-        <div className="">
-          <h1 className=" logo">SIGEA</h1>
+    <div className=" bg-[var(--app-bg-color)]">
+      <nav
+        className={`fixed top-0 bg-[var(--app-bg-color)] w-full left-0 pt-6 px-60`}
+      >
+        <div className="flex justify-between">
+          <img src="../assets/images/logo.png" />
+          {/* <h1 className=" logo">SIGEA</h1> */}
+
+          <div className=" flex items-center">
+            {links.map((link: any, i: any) => (
+              <div key={i} className=" pr-9">
+                <a
+                  className={
+                    link.name === "Register"
+                      ? "nav-links border-2 border-[var(--secondary-900)] p-4 rounded-lg"
+                      : " nav-links"
+                  }
+                  onClick={() => router.push(`${link.link}`)}
+                >
+                  {link.name}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className=" flex items-center">
-          {links.map((link: any, i: any) => (
-            <div key={i} className=" pr-9">
-              <a
-                className={
-                  link.name === "Register"
-                    ? "nav-links border-2 border-[var(--secondary-900)] p-4 rounded-lg"
-                    : " nav-links"
-                }
-                onClick={() => router.push(`${link.link}`)}
-              >
-                {link.name}
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }

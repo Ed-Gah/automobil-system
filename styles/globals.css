@@ -18,6 +18,7 @@
   --text-200: #f4f2f2;
   --text-300: #e9e8e8;
   --text-400: #d9d9d9;
+  --text-500: #c2c1c1;
 
   /* primary colors */
   --primary-800: #030082;
@@ -38,7 +39,7 @@ body {
   max-width: 100uv;
   overflow-x: hidden;
   /* margin: 0 auto; */
-  background-color: var(--app-bg-color);
+  /* background-color: var(--app-bg-color); */
 }
 
 body {
@@ -88,6 +89,6 @@ a {
     @apply text-[var(--text-400)] font-bold text-[40px] uppercase;
   }
   .sell {
-    @apply border-2 border-[var(--secondary-900)] rounded-lg text-[var(--text-400)] uppercase text-center w-full py-2
+    @apply border-2 border-[var(--secondary-900)] rounded-lg text-[var(--text-400)] uppercase text-center w-full py-2;
   }
 }

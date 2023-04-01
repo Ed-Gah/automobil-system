@@ -1,15 +1,15 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { Registration } from "@/src/components/seller";
-import { CarCart, NavBar } from "@/src/components/dashboard";
+import { CarCart, Marketing, NavBar } from "@/src/components/dashboard";
 
 function HomePage() {
   const router = useRouter();
   const carsData = [
     {
-      title: "BMW electric series",
+      name: "BMW electric series",
       description:
-        "The latest confort you can possibly get in this mordern era",
+        "The latest confort you can possibly get in this modern era. The confort this car can't be discussed, it can only be experienced. Bid now to amoungs the first people that will have the oppotuinity to experience life confort",
       imageUrl:
         "https://cdn.arstechnica.net/wp-content/uploads/2022/11/2023-BMW-i7-exterior-1-800x600.jpg",
       link: "details",
@@ -20,7 +20,7 @@ function HomePage() {
       price: "38,000.00",
     },
     {
-      title: "Tesla Model 3",
+      name: "Tesla Model 3",
       description:
         "The latest confort you can possibly get in this mordern era",
       imageUrl:
@@ -28,7 +28,7 @@ function HomePage() {
       link: "details",
     },
     {
-      title: "Mecedes 2021",
+      name: "Mecedes 2021",
       description:
         "The latest confort you can possibly get in this mordern era",
       imageUrl:
@@ -36,14 +36,14 @@ function HomePage() {
       link: "details",
     },
     {
-      title: "Mecedes 2021",
+      name: "Mecedes 2021",
       description:
         "The latest confort you can possibly get in this mordern era",
       imageUrl: "https://mcdn.wallpapersafari.com/medium/76/6/JqVOtk.jpg",
       link: "details",
     },
     {
-      title: "G-Wagon",
+      name: "G-Wagon",
       description:
         "The latest confort you can possibly get in this mordern era",
       imageUrl:
@@ -51,7 +51,7 @@ function HomePage() {
       link: "details",
     },
     {
-      title: "Range Rover",
+      name: "Range Rover",
       description:
         "The latest confort you can possibly get in this mordern era",
       imageUrl:
@@ -59,6 +59,12 @@ function HomePage() {
       link: "details",
     },
   ];
+
+  //   const newData = [
+  //     { imageUrl: "../assets/images/market.png", text: "Tesla model 6 plus" },
+  //     { imageUrl: "../assets/images/market.png", text: "Tesla model 6 plus" },
+  //     { imageUrl: "../assets/images/market.png", text: "Tesla model 6 plus" },
+  //   ];
   return (
     <div className="">
       <div className=" bg-black">
@@ -66,11 +72,11 @@ function HomePage() {
           <div>
             <NavBar />
           </div>
-          <div className=" grid grid-flow-row grid-cols-2  mt-20 ">
+          <div className=" grid grid-flow-row grid-cols-2  pt-40 ">
             <div>
               <h1 className="vision-txt">{`We don't just sell cars we sell a dream to you`}</h1>
-              <div className=" grid grid-flow-row grid-cols-1 gap-4 mt-10">
-                {/* <button className="sell">Buy</button> */}
+              <div className=" grid grid-flow-row grid-cols-2 gap-4 ">
+                <button className="sell">Buy</button>
                 <button className="sell">Sell</button>
               </div>
               <div className=" grid grid-flow-row grid-cols-2 gap-4 mt-16">
@@ -89,12 +95,21 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className=" py-20 bg-[var(--text-300)] ">
+        <div className="pt-14 bg-[var(--text-300)] ">
+          <div className="2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
+            {/* {newData.map((data: any, i: any) => (
+              <div key={i}> */}
+            <Marketing />
+            {/* </div>
+            ))} */}
+          </div>
+        </div>
+        <div className="pt-10 pb-20 bg-[var(--text-300)] ">
           <div className=" carcart 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
             {carsData.map((car: any, i: any) => (
               <div key={i} className="">
                 <CarCart
-                  title={car.title}
+                  name={car.name}
                   description={car.description}
                   imageUrl={car.imageUrl}
                   onClick={() => {

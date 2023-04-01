@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { CarCart } from "@/src/components/dashboard";
+import { CarCart, Stars } from "@/src/components/dashboard";
 
 export default function CarDetails() {
   const router = useRouter();
@@ -8,13 +8,80 @@ export default function CarDetails() {
 
   console.log("Qurery from details", query);
   return (
-    <div className=" flex justify-center mt-12">
-      <div>
-        <CarCart
-          title={query?.title}
-          description={query?.description}
-          imageUrl={query?.imageUrl}
-        />
+    <div className="bg-[var(--text-300)] 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
+      <div className=" ">
+        <div>
+          <img src={query?.imageUrl} />
+          <div className="flex justify-between mt-3 bg-[var(--text-400)] py-2 w-[100%]">
+            <p className="">
+              <strong>Name: </strong>
+              {query?.name}
+            </p>
+            <p className="">
+              <strong>Engine: </strong>
+              {query?.engine}
+            </p>
+            <p className="">
+              <strong>Fuel type: </strong>
+              {query?.fuelType}
+            </p>
+            <p className="">
+              <strong>Type: </strong>
+              {query?.type}
+            </p>
+            {/* <p className="">
+              <strong>Mileage: </strong>
+              {query?.mileage}
+            </p> */}
+          </div>
+          <div className=" bg-[var(--text-400)] mt-3 px-8 py-3 ">
+            <p className="text-center">
+              <strong>Description: </strong>
+            </p>
+            <p className="text-center ">{query?.description}</p>
+          </div>
+          <p>Trendy bids</p>
+          <div>
+            <Stars />
+          </div>
+          <div>
+            <button className="bg-[var(--app-bg-color)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3">
+              Place your bid
+            </button>
+          </div>
+          <div>
+            <form className=" mt-4 w-1/3 mx-auto">
+              <input
+                name="email"
+                type={"email"}
+                required
+                placeholder="email"
+                className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] bg-[var(--text-400)] py-2 w-full rounded-lg"
+              />
+              <input
+                name="bid"
+                type={"number"}
+                required
+                placeholder="Enter your bidding amount"
+                className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] bg-[var(--text-400)] py-2 w-full rounded-lg mt-4"
+              />
+              <div className=" grid grid-cols-2 gap-2">
+                <button
+                  type="submit"
+                  className="bg-[var(--app-bg-color)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3"
+                >
+                  Send bid
+                </button>
+                <button
+                  type="submit"
+                  className="w-full text-[var(--app-bg-color)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

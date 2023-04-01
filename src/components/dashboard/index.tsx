@@ -1,3 +1,6 @@
 import CarCart from "./CarCart";
 import NavBar from "./NavBar";
-export { CarCart, NavBar };
+import Marketing from "./Marketing";
+import Stars from "./Stars";
+
+export { CarCart, NavBar, Marketing, Stars };
