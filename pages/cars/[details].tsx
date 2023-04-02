@@ -1,51 +1,47 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { CarCart, Stars } from "@/src/components/dashboard";
+import { GetServerSidePropsContext } from "next";
+import { CarsTypings } from "@/typings/cars";
+import Stars from "@/src/components/home/Stars";
 
-export default function CarDetails() {
+export default function CarDetails(car: CarsTypings) {
   const router = useRouter();
-  const { query } = router;
 
-  console.log("Qurery from details", query);
   return (
-    <div className="bg-[var(--text-300)] 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
+    <div className=" 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
       <div className=" ">
         <div>
-          <img src={query?.imageUrl} />
-          <div className="flex justify-between mt-3 bg-[var(--text-400)] py-2 w-[100%]">
+          <img src={car?.photo_url} />
+          <div className="flex justify-between mt-3 my-2 w-[100%]">
             <p className="">
               <strong>Name: </strong>
-              {query?.name}
+              {car?.car_name}
             </p>
             <p className="">
               <strong>Engine: </strong>
-              {query?.engine}
+              {car?.engine_type}
             </p>
             <p className="">
               <strong>Fuel type: </strong>
-              {query?.fuelType}
+              {car?.fuel_type}
             </p>
             <p className="">
               <strong>Type: </strong>
-              {query?.type}
+              {car?.car_model}
             </p>
-            {/* <p className="">
-              <strong>Mileage: </strong>
-              {query?.mileage}
-            </p> */}
           </div>
-          <div className=" bg-[var(--text-400)] mt-3 px-8 py-3 ">
+          <div className=" mt-3 px-8 py-3 ">
             <p className="text-center">
               <strong>Description: </strong>
             </p>
-            <p className="text-center ">{query?.description}</p>
+            <p className="text-center ">{car?.description}</p>
           </div>
           <p>Trendy bids</p>
           <div>
             <Stars />
           </div>
           <div>
-            <button className="bg-[var(--app-bg-color)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3">
+            <button className="w-full  py-2 rounded-lg border-[2px]  mt-3">
               Place your bid
             </button>
           </div>
@@ -56,25 +52,25 @@ export default function CarDetails() {
                 type={"email"}
                 required
                 placeholder="email"
-                className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] bg-[var(--text-400)] py-2 w-full rounded-lg"
+                className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] my-2 w-full rounded-lg"
               />
               <input
                 name="bid"
                 type={"number"}
                 required
                 placeholder="Enter your bidding amount"
-                className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] bg-[var(--text-400)] py-2 w-full rounded-lg mt-4"
+                className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] my-2 w-full rounded-lg mt-4"
               />
               <div className=" grid grid-cols-2 gap-2">
                 <button
                   type="submit"
-                  className="bg-[var(--app-bg-color)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3"
+                  className="w-full  py-2 rounded-lg border-[2px]  mt-3"
                 >
                   Send bid
                 </button>
                 <button
                   type="submit"
-                  className="w-full text-[var(--app-bg-color)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3"
+                  className="w-full py-2 rounded-lg border-[2px]  mt-3"
                 >
                   Cancel
                 </button>
@@ -85,4 +81,19 @@ export default function CarDetails() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps({
+  params,
+}: GetServerSidePropsContext) {
+  // get single event
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/cars/${params?.details}`
+  )
+    .then((response) => response.json())
+    .catch((error) => error);
+
+  return {
+    props: { car: data }, // will be passed to the page component as props
+  };
 }

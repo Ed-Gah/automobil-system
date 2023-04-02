@@ -15,19 +15,19 @@ export default function CarCart({
   return (
     <div>
       <div
-        className="max-w-sm bg-[var(--text-300)] border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer"
+        className="max-w-sm border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer"
         onClick={onClick}
       >
         <a>
           <div className=" flex justify-between relative top-10 mx-8">
             <div className="">
-              <h1 className=" text-[11px] text-[var(--text-100)] bg-[var(--app-bg-color)] px-3 py-1 rounded-2xl">
+              <h1 className=" text-[11px]  px-3 py-1 rounded-2xl">
                 {bid ? bid : 0} {bid > 0 ? "Bids" : "Bid"}
               </h1>
             </div>
             <div>
               <svg
-                className=" bg-[var(--text-100)] rounded-full p-1"
+                className=" rounded-full p-1"
                 width="25"
                 height="25"
                 viewBox="0 0 18 16"
@@ -71,7 +71,7 @@ export default function CarCart({
         </a>
         <div className="p-5">
           <a href="#">
-            <h5 className=" font-medium text-[var(--secondary-900)] text-2xl">
+            <h5 className=" font-medium  text-2xl">
               Price: {price}
             </h5>
           </a>
@@ -94,7 +94,7 @@ export default function CarCart({
           {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {description}
           </p> */}
-          <button className=" bg-black w-full text-[var(--text-400)] font-medium text-[18px] rounded-lg py-2">
+          <button className=" bg-black w-full  font-medium text-[18px] rounded-lg py-2">
             Place off your bid
           </button>
         </div>
