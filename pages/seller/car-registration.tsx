@@ -10,8 +10,8 @@ export default function CarRegistration() {
     model: "",
     engine: "",
     year: "",
-    color: '',
-    description: ''
+    color: "",
+    description: "",
   });
   const [errors, setErrors] = useState({}) as any;
   const [textType, setTextType] = useState("password");
@@ -30,7 +30,8 @@ export default function CarRegistration() {
   return (
     <div className=" bg-[var(--text-300)] px-20 pb-28">
       <h1 className=" text-center text-2xl font-medium pt-28">
-Vehicle Information      </h1>
+        Vehicle Information{" "}
+      </h1>
       <div>
         <div className=" mt-7">
           <input
@@ -44,9 +45,20 @@ Vehicle Information      </h1>
             }}
           />
         </div>
-
-        <div>
-            
+        <div className="flex mt-4">
+          <input
+            className=" input"
+            type={"radio"}
+            placeholder="Price"
+            value={registrationInputs.price}
+            onChange={(e: any) => {
+              handleRegistrationInputs(e.target.value, "price");
+              handleErrors(null, "price");
+            }}
+          />
+          <label className=" font-medium text-[18px]  ml-[14px] float-left ">
+            Yes
+          </label>
         </div>
 
         <div className=" grid grid-cols-2 gap-6 mt-7">
