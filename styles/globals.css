@@ -25,6 +25,7 @@
 
   /* seconday colors */
   --secondary-100: #ffffff;
+  --secondary-500: #e10202;
   --secondary-900: #870000;
 }
 
@@ -69,7 +70,7 @@ a {
     @apply text-2xl text-[var(--gray-700)] italic;
   }
   .input {
-    @apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    @apply w-full font-medium placeholder:text-[var(--text-400)] bg-[var(--text-200)] py-3 pl-4 rounded-lg;
   }
   .btn-active {
     @apply w-full text-white  focus:ring-4 focus:outline-none bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center;
@@ -90,5 +91,8 @@ a {
   }
   .sell {
     @apply border-2 border-[var(--secondary-900)] rounded-lg text-[var(--text-400)] uppercase text-center w-full py-2;
+  }
+  .checkbox {
+    @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
   }
 }
