@@ -42,8 +42,8 @@
   .body-medium {
     @apply text-base  font-medium not-italic leading-6 -tracking-[0.04em]  text-[var(--header-color)];
   }
-  .body-bold {
-    @apply text-base font-bold not-italic leading-6 -tracking-[0.02em]  text-[var(--header-color)];
+  .input {
+    @apply w-full font-medium placeholder:text-[var(--text-400)] bg-[var(--text-200)] py-3 pl-4 rounded-lg;
   }
   .btn-active {
     @apply flex h-[40px] items-center justify-center whitespace-nowrap rounded-full bg-primary-P500 px-4 text-base font-bold text-white shadow-md hover:bg-primary-P400;
@@ -101,5 +101,11 @@ by adding a custom base style that sets the font-family property explicitly: */
   }
   input:focus-visible {
     outline: none;
+  }
+  .checkbox {
+    @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
+  }
+  .checkbox {
+    @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
   }
 }

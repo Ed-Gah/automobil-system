@@ -7,7 +7,7 @@ export default function NavBars() {
     { name: "About Us", link: "/about" },
     { name: "Get Help", link: "/help" },
     { name: "Login", link: "/dashboard/log-in" },
-    { name: "Register", link: "/sign-up" },
+    { name: "Register", link: "/seller/registration" },
   ];
   return (
     <div className=" bg-[var(--app-bg-color)]">
