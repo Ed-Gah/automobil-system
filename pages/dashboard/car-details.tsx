@@ -83,7 +83,7 @@ export default function CarDetails() {
         highestBid = bids[i];
       }
     }
-    setHighestBid(highestBid.price);
+    setHighestBid(highestBid?.price);
     // console.log("Hihest bid: ", highestBid.price);
   }, [bids]);
   console.log("Bid hishtest price:", highesBid);
