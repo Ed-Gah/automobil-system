@@ -13,7 +13,7 @@ const Layout = ({ children }: DashboardLayoutProps) => {
         {/* <div className=" max-w-[1300px]"> */}
           <NavBar />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         {/* </div> */}
       </div>
     </>

@@ -1,17 +1,16 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Registration } from "@/src/components/seller";
 import NavBar from "@/src/components/home/NavBar2";
 import Image from "next/image";
 import { GetServerSidePropsContext } from "next";
 import { CarsTypings } from "@/typings/cars";
+import Filter from "@/src/components/Filter";
 
 type props = {
   cars: CarsTypings[];
 };
 
 function HomePage({ cars }: props) {
-
   const router = useRouter();
   const carsData = [
     {
@@ -68,7 +67,11 @@ function HomePage({ cars }: props) {
     },
   ];
 
-  return <>NOting yet</>;
+  return (
+    <>
+      <Filter />
+    </>
+  );
 }
 
 export default HomePage;
