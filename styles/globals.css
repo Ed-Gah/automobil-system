@@ -1,96 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Open+Sans:ital,wght@0,700;1,300;1,400;1,500&family=Roboto:ital,wght@0,500;1,900&display=swap");
+/* https://tailwindcss.com/docs/adding-custom-styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* css variables */
 :root {
-  --max-width: 1512px;
-  --border-radius: 12px;
-  --content-width: 1002px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --gray-500: ;
-  --app-bg-color: black;
-
-  /* text colors */
-  --header1: 100px;
-  --text-100: #ffffff;
-  --text-200: #f4f2f2;
-  --text-300: #e9e8e8;
-  --text-400: #d9d9d9;
-  --text-500: #c2c1c1;
-
-  /* primary colors */
-  --primary-800: #030082;
-
-  /* seconday colors */
-  --secondary-100: #ffffff;
-  --secondary-500: #e10202;
-  --secondary-900: #870000;
+  --header-color: #808080;
 }
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100uv;
-  overflow-x: hidden;
-  /* margin: 0 auto; */
-  /* background-color: var(--app-bg-color); */
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    ) */
-  /* rgb(var(--background-start-rgb)); */
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/* utitility classes */
 @layer components {
-  .input-title {
-    @apply text-2xl text-[var(--gray-700)] italic;
+  .display-1 {
+    @apply text-left text-7xl font-bold not-italic leading-[64px] -tracking-[0.04em];
+  }
+  .header1-regular {
+    @apply text-4xl font-normal not-italic leading-[56px] -tracking-[0.04em] text-[var(--header-color)];
+  }
+  .nav-links {
+    @apply font-medium text-grey-W200;
+  }
+  .header1-bold {
+    @apply text-4xl font-bold not-italic leading-[48px] -tracking-[0.04em];
+  }
+  .header2-regular {
+    @apply text-[32px] font-normal not-italic leading-10 -tracking-[0.04em]  text-[var(--header-color)];
+  }
+  .header2-bold {
+    @apply text-[32px] font-bold not-italic leading-10 -tracking-[0.03em]  text-[var(--header-color)];
+  }
+  .header3-regular {
+    @apply text-[24px] font-normal not-italic leading-[32px] -tracking-[0.02em]  text-[var(--header-color)];
+  }
+  .header3-bold {
+    @apply text-[24px] font-bold not-italic leading-[32px] -tracking-[0.04em]  text-[var(--header-color)];
+  }
+  .body {
+    @apply text-base font-medium not-italic leading-6 -tracking-[0.04em]  text-[var(--header-color)];
+  }
+  .body-regular {
+    @apply text-base font-normal not-italic leading-6 -tracking-[0.02em]  text-[var(--header-color)];
+  }
+  .body-medium {
+    @apply text-base  font-medium not-italic leading-6 -tracking-[0.04em]  text-[var(--header-color)];
   }
   .input {
     @apply w-full font-medium placeholder:text-[var(--text-500)] bg-[var(--text-200)] py-3 pl-4 rounded-lg;
   }
   .btn-active {
-    @apply w-full text-white  focus:ring-4 focus:outline-none bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center;
+    @apply flex h-[40px] items-center justify-center whitespace-nowrap rounded-full bg-primary-P500 px-4 text-base font-bold text-white shadow-md hover:bg-primary-P400;
   }
-  .carcart {
-    @apply grid grid-flow-row 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-2 gap-5 md:grid-cols-2 sm:grid-cols-1;
+  .btn-active-small {
+    @apply flex h-[40px] items-center justify-center whitespace-nowrap rounded-full border-2 border-primary-P500 bg-primary-P500  px-3 text-[13px] font-bold text-white shadow-md hover:border-primary-P400 hover:bg-primary-P400;
   }
-  .vision-txt {
-    @apply font-medium text-[49px] text-[var(--text-400)] uppercase;
+  .btn-outline {
+    @apply flex h-[40px] items-center justify-center justify-items-center whitespace-nowrap rounded-full border-2 border-primary-P500 px-4 text-base font-bold text-primary-P500 hover:bg-primary-P75;
   }
-  .nav-bar {
+  .btn-outline-small {
+    @apply flex h-[40px]  items-center justify-center justify-items-center whitespace-nowrap rounded-full border-2 border-primary-P500 px-3 text-[13px] font-bold text-primary-P500 hover:bg-primary-P75;
   }
-  .nav-links {
-    @apply text-[18px] font-medium text-[var(--text-400)] uppercase hover:cursor-pointer;
+  .btn-inactive {
+    @apply cursor-default items-center justify-items-center  whitespace-nowrap rounded-[32px] border-0 bg-primary-P50  px-6 py-3 text-base font-normal not-italic text-grey-W300;
   }
-  .logo {
-    @apply text-[var(--text-400)] font-bold text-[40px] uppercase;
+  .btn-active-mobile {
+    @apply cursor-default items-center justify-items-center  whitespace-nowrap rounded-[32px] border-0 bg-primary-P500 px-6  py-3 text-base font-normal not-italic text-grey-W300 hover:bg-primary-P300;
   }
-  .sell {
-    @apply border-2 border-[var(--secondary-900)] rounded-lg text-[var(--text-400)] uppercase text-center w-full py-2;
+
+  .input-validated {
+    @apply h-[56px] w-[330px] rounded-md  border border-[#4C3DF5] py-[8px] px-[16px] text-[#270441] hover:border-[#F1F1F4];
+  }
+
+  .input-inactive {
+    @apply mt-[24px] h-[56px] w-[330px] cursor-not-allowed rounded-md border border-[gray-500] py-[8px] px-[16px] text-[#270441];
+  }
+  .searchForm {
+    @apply flex h-[40px] w-[200px] overflow-hidden rounded-[8px] border border-primary-P500 bg-transparent sm:rounded-r-[0px] lg:w-[290px];
+  }
+  .searchInput {
+    @apply w-[155px] bg-transparent px-[8px] text-[12px] lg:w-[240px] lg:text-[16px];
+  }
+  .searchSubmit {
+    @apply m-0 ml-auto overflow-hidden rounded-[8px] border border-transparent px-2 opacity-70;
+  }
+  .searchForm {
+    @apply flex h-[40px] w-[200px] overflow-hidden rounded-[8px] border border-primary-P500 bg-transparent sm:rounded-r-[0px] lg:w-[290px];
+  }
+  .searchInput {
+    @apply w-[155px] bg-transparent px-[8px] text-[12px] lg:w-[240px] lg:text-[16px];
+  }
+  .searchSubmit {
+    @apply m-0 ml-auto overflow-hidden rounded-[8px] border border-transparent px-2 opacity-70;
+  }
+}
+
+/* You can also customize the default font used in your project 
+by adding a custom base style that sets the font-family property explicitly: */
+@layer base {
+  body {
+    font-family: "DM Sans", sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
+    /* font-family: "Roboto", sans-serif; */
+  }
+  input:focus-visible {
+    outline: none;
+  }
+  .checkbox {
+    @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
   }
   .checkbox {
     @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
