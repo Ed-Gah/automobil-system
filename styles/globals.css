@@ -43,7 +43,7 @@
     @apply text-base  font-medium not-italic leading-6 -tracking-[0.04em]  text-[var(--header-color)];
   }
   .input {
-    @apply w-full font-medium placeholder:text-[var(--text-400)] bg-[var(--text-200)] py-3 pl-4 rounded-lg;
+    @apply w-full font-medium placeholder:text-[var(--text-500)] bg-[var(--text-200)] py-3 pl-4 rounded-lg;
   }
   .btn-active {
     @apply flex h-[40px] items-center justify-center whitespace-nowrap rounded-full bg-primary-P500 px-4 text-base font-bold text-white shadow-md hover:bg-primary-P400;

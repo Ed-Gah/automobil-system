@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import {useRouter} from 'next/router';
 
 export default function Registration() {
+    const router = useRouter();
   const [registrationInputs, setRegistrationInputs] = useState({
     firstName: "",
     lastName: "",
@@ -212,7 +214,7 @@ export default function Registration() {
           </label>
         </div>
         <div></div>
-        <button className=" bg-[var(--secondary-500)] w-[50%] mx-auto text-[var(--text-300)] py-3 rounded-lg mt-7 font-medium flex justify-center">
+        <button className=" bg-[var(--secondary-500)] w-[50%] mx-auto text-[var(--text-300)] py-3 rounded-lg mt-7 font-medium flex justify-center" onClick={() => router.push('/seller/car-registration')}>
           Become a seller
         </button>
       </div>
