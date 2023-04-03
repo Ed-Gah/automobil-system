@@ -106,8 +106,8 @@
   .searchSubmit {
     @apply m-0 ml-auto overflow-hidden rounded-[8px] border border-transparent px-2 opacity-70;
   }
-  .searchForm {
-    @apply flex h-[40px] w-[200px] overflow-hidden rounded-[8px] border border-primary-P500 bg-transparent sm:rounded-r-[0px] lg:w-[290px];
+  .carcart {
+    @apply grid grid-flow-row 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 gap-5 md:grid-cols-2 sm:grid-cols-1;
   }
   .searchInput {
     @apply w-[155px] bg-transparent px-[8px] text-[12px] lg:w-[240px] lg:text-[16px];
@@ -133,5 +133,8 @@ by adding a custom base style that sets the font-family property explicitly: */
   }
   .checkbox {
     @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
+  }
+  .btn-hover {
+    @apply hover:cursor-pointer hover:bg-[var(--secondary-900)] hover:border-[var(--secondary-900)];
   }
 }

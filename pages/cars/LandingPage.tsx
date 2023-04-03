@@ -8,10 +8,12 @@ import Filter from "@/src/components/Filter";
 import Sigin from "../seller/auth";
 
 type props = {
-  cars: CarsTypings[];
+  cars: CarsTypings[] | undefined;
 };
 
 function HomePage({ cars }: props) {
+  console.log(cars);
+
   const router = useRouter();
   const carsData = [
     {
@@ -70,7 +72,6 @@ function HomePage({ cars }: props) {
 
   return (
     <>
-      <Filter />
       <Sigin />
     </>
   );

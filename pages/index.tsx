@@ -6,11 +6,11 @@ import { CarsTypings } from "@/typings/cars";
 
 const inter = Inter({ subsets: ["latin"] });
 type props = {
-  cars: CarsTypings[];
+  car: CarsTypings[];
 };
 
-export default function Home({ cars }: props) {
-  console.log(cars);
+export default function Home({ car }: props) {
+  console.log(car);
 
   return (
     <>
@@ -20,7 +20,7 @@ export default function Home({ cars }: props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <HomePage cars={cars} />
+        <HomePage cars={car} />
       </main>
     </>
   );
@@ -37,10 +37,9 @@ export async function getServerSideProps() {
     })
     .then((cars) => cars?.json())
     .catch((error) => error);
-  console.log(data);
+  console.log("data from Backend", data);
 
-  const carData = JSON.stringify(data);
   return {
-    props: { car: carData || null }, // will be passed to the page component as props
+    props: { car: JSON.stringify([data]) || null }, // will be passed to the page component as props
   };
 }
