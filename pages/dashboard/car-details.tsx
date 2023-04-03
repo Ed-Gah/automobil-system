@@ -8,10 +8,10 @@ export default function CarDetails() {
 
   console.log("Qurery from details", query);
   return (
-    <div className="bg-[var(--text-300)] 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
+    <div className="bg-[var(--text-300)] 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%] pb-20">
       <div className=" ">
         <div>
-          <img src={query?.imageUrl} />
+          <img className=" w-[50%] mx-auto" src={query?.imageUrl} />
           <div className="flex justify-between mt-3 bg-[var(--text-400)] py-2 w-[100%]">
             <p className="">
               <strong>Name: </strong>
@@ -40,14 +40,14 @@ export default function CarDetails() {
             </p>
             <p className="text-center ">{query?.description}</p>
           </div>
-          <p>Trendy bids</p>
+          {/* <p>Trendy bids</p>
           <div>
             <Stars />
-          </div>
+          </div> */}
           <div>
-            <button className="bg-[var(--app-bg-color)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3">
+            {/* <button className="bg-[var(--seconday-500)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3">
               Place your bid
-            </button>
+            </button> */}
           </div>
           <div>
             <form className=" mt-4 w-1/3 mx-auto">
@@ -65,19 +65,19 @@ export default function CarDetails() {
                 placeholder="Enter your bidding amount"
                 className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] bg-[var(--text-400)] py-2 w-full rounded-lg mt-4"
               />
-              <div className=" grid grid-cols-2 gap-2">
+              <div className=" grid grid-cols-1 gap-2">
                 <button
                   type="submit"
-                  className="bg-[var(--app-bg-color)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3"
+                  className="bg-[var(--secondary-500)] w-full text-[var(--text-100)] py-2 rounded-lg border-[2px] border-[var(--secondary-500)] mt-3"
                 >
-                  Send bid
+                  Bid
                 </button>
-                <button
+                {/* <button
                   type="submit"
-                  className="w-full text-[var(--app-bg-color)] py-2 rounded-lg border-[2px] border-[var(--secondary-900)] mt-3"
+                  className="w-full text-[var(--secondary-500)] py-2 rounded-lg border-[2px] border-[var(--secondary-500)] mt-3"
                 >
                   Cancel
-                </button>
+                </button> */}
               </div>
             </form>
           </div>

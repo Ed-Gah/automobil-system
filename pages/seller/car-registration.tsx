@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 export default function CarRegistration() {
+  const router = useRouter();
   const [registrationInputs, setRegistrationInputs] = useState({
     price: "",
     forBid: true,
@@ -315,7 +317,7 @@ export default function CarRegistration() {
           <p className=" font-medium text-[var(--text-500)]">2500 characters</p>
         </div>
         <div></div>
-        <button className=" bg-[var(--secondary-500)] w-[50%] mx-auto text-[var(--text-300)] py-3 rounded-lg mt-7 font-medium flex justify-center">
+        <button className=" bg-[var(--secondary-500)] w-[50%] mx-auto text-[var(--text-300)] py-3 rounded-lg mt-7 font-medium flex justify-center" onClick={() => router.push('/dashboard')}>
           Sell car
         </button>
       </div>

@@ -19,7 +19,7 @@ export default function CarCart({
         onClick={onClick}
       >
         <a>
-          <div className=" flex justify-between relative top-10 mx-8">
+          <div className=" flex justify-between relative top-4 mx-8">
             <div className="">
               <h1 className=" text-[11px] text-[var(--text-100)] bg-[var(--app-bg-color)] px-3 py-1 rounded-2xl">
                 {bid ? bid : 0} {bid > 0 ? "Bids" : "Bid"}
@@ -46,7 +46,7 @@ export default function CarCart({
             </div>
           </div>
           <img
-            className="rounded-t-lg"
+            className=" w-full"
             src={
               imageUrl
                 ? imageUrl
@@ -76,25 +76,27 @@ export default function CarCart({
             </h5>
           </a>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Name: {name}
+            <strong>Name: </strong> {name}
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Engine: {engine}
+            <strong>Engine: </strong> {engine}
           </p>
           {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             Type: {type}
           </p> */}
+
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Fuel Type: {fuelType}
+            <strong>Mileage: </strong>
+            {mileage}
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Mileage: {mileage}
+            <strong>Fuel type: </strong> {fuelType}
           </p>
 
           {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {description}
           </p> */}
-          <button className=" bg-black w-full text-[var(--text-400)] font-medium text-[18px] rounded-lg py-2">
+          <button className=" bg-[var(--secondary-500)] w-full text-[var(--text-400)] font-medium text-[18px] rounded-lg py-2">
             Place off your bid
           </button>
         </div>
