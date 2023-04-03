@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { register } from "@/src/reduxStore/reducers";
 
 export default function Registration() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [registrationInputs, setRegistrationInputs] = useState({
     firstName: "",
@@ -34,6 +37,13 @@ export default function Registration() {
 
   const submitForm = (e: any) => {
     e.preventDefault();
+    let userData = {
+      name: registrationInputs.firstName + registrationInputs.lastName,
+      phoneNumber: registrationInputs.phoneNumber,
+      email: registrationInputs.email,
+      password: registrationInputs.password,
+    };
+    dispatch(register(userData));
     router.push("/seller/car-registration");
   };
 
