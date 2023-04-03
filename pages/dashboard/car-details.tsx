@@ -11,7 +11,7 @@ export default function CarDetails() {
     <div className="bg-[var(--text-300)] 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%] pb-20">
       <div className=" ">
         <div>
-          <img className=" w-[50%] mx-auto" src={query?.imageUrl} />
+          <img className=" w-[50%] mx-auto" src={query?.imageUrl? query?.imageUrl : '../assets/images/first-car.png'} />
           <div className="flex justify-between mt-3 bg-[var(--text-400)] py-2 w-[100%]">
             <p className="">
               <strong>Name: </strong>
