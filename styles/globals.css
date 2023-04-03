@@ -7,7 +7,33 @@
 /* css variables */
 :root {
   --header-color: #808080;
+
+  --max-width: 1512px;
+  --border-radius: 12px;
+  --content-width: 1002px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --gray-500: ;
+  --app-bg-color: black;
+
+  /* text colors */
+  --header1: 100px;
+  --text-100: #ffffff;
+  --text-200: #f4f2f2;
+  --text-300: #e9e8e8;
+  --text-400: #d9d9d9;
+  --text-500: #c2c1c1;
+
+  /* primary colors */
+  --primary-800: #030082;
+
+  /* seconday colors */
+  --secondary-100: #ffffff;
+  --secondary-500: #e10202;
+  --secondary-900: #870000;
 }
+
 @layer components {
   .display-1 {
     @apply text-left text-7xl font-bold not-italic leading-[64px] -tracking-[0.04em];

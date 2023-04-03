@@ -60,7 +60,9 @@ export default function CarRegistration() {
             stroke-width="2"
           />
         </svg>
-        <p className=" font-medium text-[18px] ml-5">Upload clear images/video of car</p>
+        <p className=" font-medium text-[18px] ml-5">
+          Upload clear images/video of car
+        </p>
       </div>
       <div>
         <div className=" mt-7">
@@ -315,7 +317,7 @@ export default function CarRegistration() {
           <p className=" font-medium text-[var(--text-500)]">2500 characters</p>
         </div>
         <div></div>
-        <button className=" bg-[var(--secondary-500)] w-[50%] mx-auto text-[var(--text-300)] py-3 rounded-lg mt-7 font-medium flex justify-center">
+        <button className="btn-inactive w-[50%] mx-auto  py-3 rounded-lg mt-7 font-medium flex justify-center">
           Sell car
         </button>
       </div>

@@ -27,7 +27,8 @@ export default function Home({ cars }: props) {
 }
 
 export async function getServerSideProps() {
-  const data = await fetch(`https://ec2-13-58-99-37.us-east-2.compute.amazonaws.com:9080/cars?start_key=0&count=2`
+  const data = await fetch(
+    `http://ec2-13-58-99-37.us-east-2.compute.amazonaws.com:9080/cars?start_key=0&count=2`
   )
     .then((response) => {
       if (response.ok) {

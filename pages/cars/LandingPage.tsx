@@ -5,6 +5,7 @@ import Image from "next/image";
 import { GetServerSidePropsContext } from "next";
 import { CarsTypings } from "@/typings/cars";
 import Filter from "@/src/components/Filter";
+import Sigin from "../seller/auth";
 
 type props = {
   cars: CarsTypings[];
@@ -70,6 +71,7 @@ function HomePage({ cars }: props) {
   return (
     <>
       <Filter />
+      <Sigin />
     </>
   );
 }
