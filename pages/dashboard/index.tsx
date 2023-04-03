@@ -56,6 +56,57 @@ function HomePage() {
       imageUrl: "../assets/images/fouth-car.png",
       link: "details",
     },
+    {
+      name: "Honder 2023",
+      description:
+        "The latest confort you can possibly get in this modern era. The confort this car can't be discussed, it can only be experienced. Bid now to amoungs the first people that will have the oppotuinity to experience life confort",
+      imageUrl: "../assets/images/first-car.png",
+      link: "details",
+      engine: "Diesel",
+      type: "GLE 350",
+      fuelType: "Diesel",
+      mileage: "18 mpg city & 23 mpg highway",
+      price: "3,000.00",
+    },
+    {
+      mileage: "18 mpg city & 23 mpg highway",
+
+      price: "5,000.00",
+      engine: "Diesel",
+      fuelType: "Diesel",
+      type: "GLE 350",
+      name: "Meredes GLE",
+      description:
+        "The latest confort you can possibly get in this mordern era",
+      imageUrl: "../assets/images/second-car.png",
+      link: "details",
+    },
+    {
+      mileage: "18 mpg city & 23 mpg highway",
+
+      price: "5,000.00",
+      engine: "Diesel",
+      fuelType: "Diesel",
+      type: "GLE 350",
+      name: "Meredes GLE",
+      description:
+        "The latest confort you can possibly get in this mordern era",
+      imageUrl: "../assets/images/third-car.png",
+      link: "details",
+    },
+    {
+      mileage: "18 mpg city & 23 mpg highway",
+
+      price: "5,000.00",
+      engine: "Diesel",
+      fuelType: "Diesel",
+      type: "GLE 350",
+      name: "Meredes GLE",
+      description:
+        "The latest confort you can possibly get in this mordern era",
+      imageUrl: "../assets/images/fouth-car.png",
+      link: "details",
+    },
   ];
 
   //   const newData = [
@@ -97,7 +148,7 @@ function HomePage() {
           <div className="2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
             {/* {newData.map((data: any, i: any) => (
               <div key={i}> */}
-            <Marketing />
+            {/* <Marketing /> */}
             {/* </div>
             ))} */}
           </div>

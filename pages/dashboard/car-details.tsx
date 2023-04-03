@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 import { CarCart, Stars } from "@/src/components/dashboard";
-
+import { bidCar, getBids } from "@/src/reduxStore/reducers";
 const Timer = ({ delayResend = "500" }) => {
   const [delay, setDelay] = useState(+delayResend);
   const hours = Math.floor(delay / 24);
@@ -39,11 +40,53 @@ const Timer = ({ delayResend = "500" }) => {
 export default function CarDetails() {
   const router = useRouter();
   const { query } = router;
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const [registeredBids, setRegisteredBids] = useState([]) as any;
+  const { bids } = useSelector(getBids);
+  const [lowestBid, setLowestBid] = useState(0) as any;
+  const [highesBid, setHighestBid] = useState(0) as any;
+
+  console.log("Bids: ", bids);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("@bids", JSON.stringify(bids)) as any;
+    }
+  }, [bids]);
+
   const placeBid = (e: any) => {
+    const bidData = {
+      price: e.target.bid.value,
+      email: e.target.email.value,
+    };
     e.preventDefault();
+    dispatch(bidCar(bidData));
     setShowModal(true);
   };
+
+  useEffect(() => {
+    let query: any;
+
+    if (typeof window !== "undefined") {
+      const queryString = localStorage.getItem("@bids") as any;
+      query = JSON.parse(queryString);
+      console.log("Query: ", query);
+      setRegisteredBids(query);
+    }
+  }, []);
+
+  useEffect(() => {
+    let highestBid = bids[0];
+    for (let i = 1; i < bids.length; i++) {
+      if (bids[i]?.price > highestBid?.price) {
+        highestBid = bids[i];
+      }
+    }
+    setHighestBid(highestBid.price);
+    // console.log("Hihest bid: ", highestBid.price);
+  }, [bids]);
+  console.log("Bid hishtest price:", highesBid);
   return (
     <>
       <div className=" bg-[var(--text-300)] ">
@@ -77,7 +120,15 @@ export default function CarDetails() {
                   fill="#E10202"
                 />
               </svg>
-
+              {bids && (
+                <div className=" flex justify-center mt-4">
+                  <h1 className=" font-bold">
+                    Bids on this Car: {bids?.length}
+                  </h1>
+                  <h1 className=" font-bold ml-6">Highest bid: {highesBid}</h1>
+                  {/* <h1 className=" font-bold ml-6">Lowest bid: {lowestBid}</h1> */}
+                </div>
+              )}
               <div className="flex justify-between mt-3 bg-[var(--text-300)] py-2 w-[100%]">
                 <div className=" bg-[var(--text-400)] flex justify-between w-[40%] rounded-sm">
                   <div className=" px-6 py-1">
@@ -123,7 +174,7 @@ export default function CarDetails() {
                     className=" placeholder:text-center placeholder:text-[18px] placeholder:font-medium font-medium text-[18px] bg-[var(--text-400)] py-2 w-full rounded-lg mt-4 text-center"
                   />
                   <input
-                    name="bid"
+                    name="email"
                     type={"email"}
                     required
                     placeholder="email"
@@ -215,7 +266,6 @@ export default function CarDetails() {
                     className="bg-green-500 w-[30%] py-3 rounded-xl mb-6"
                     onClick={() => setShowModal(false)}
                   >
-                    {" "}
                     OK
                   </button>
                 </div>
