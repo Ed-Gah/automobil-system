@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Registration } from "@/src/components/seller";
 import { CarCart, Marketing, NavBar } from "@/src/components/dashboard";
 
 function HomePage() {
