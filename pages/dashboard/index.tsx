@@ -125,8 +125,13 @@ function HomePage() {
             <div>
               <h1 className="vision-txt">{`We don't just sell cars we sell a dream to you`}</h1>
               <div className=" grid grid-flow-row grid-cols-2 gap-4 ">
-                <button className="sell">Buy</button>
-                <button className="sell">Sell</button>
+                <button className="sell hover:bg-slate-950">Buy</button>
+                <button
+                  onClick={() => router.push("/seller/registration")}
+                  className="sell"
+                >
+                  Sell
+                </button>
               </div>
               <div className=" grid grid-flow-row grid-cols-2 gap-4 mt-16">
                 <img src="../assets/images/car1.png" />
