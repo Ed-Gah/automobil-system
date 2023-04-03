@@ -95,4 +95,7 @@ a {
   .checkbox {
     @apply appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
   }
+  .btn-hover {
+    @apply hover:cursor-pointer hover:bg-[var(--secondary-900)] hover:border-[var(--secondary-900)];
+  }
 }

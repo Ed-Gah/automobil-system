@@ -49,7 +49,7 @@ export default function Registration() {
 
   return (
     <div className=" bg-[var(--text-300)] pb-28">
-      <div className=" 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%]">
+      <div className=" 2xl:w-[60%] mx-auto xl:w-[60%] lg:w-[80%] md:w-[95%] sm:w-[100%] px-6">
         <h1 className=" text-center text-2xl font-medium pt-28">
           Register New User
         </h1>
