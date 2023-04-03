@@ -125,7 +125,7 @@ export default function CarDetails() {
                   <h1 className=" font-bold">
                     Bids on this Car: {bids?.length}
                   </h1>
-                  <h1 className=" font-bold ml-6">Highest bid: {highesBid}</h1>
+                  <h1 className=" font-bold ml-6">Highest bid: ${highesBid}</h1>
                   {/* <h1 className=" font-bold ml-6">Lowest bid: {lowestBid}</h1> */}
                 </div>
               )}
