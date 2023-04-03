@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { registerCar } from "@/src/reduxStore/reducers";
 
 export default function CarRegistration() {
   const router = useRouter();
+  const dispatch = useDispatch();
   const [registrationInputs, setRegistrationInputs] = useState({
     price: "",
     forBid: true,
@@ -34,6 +37,20 @@ export default function CarRegistration() {
 
   const submitCar = (e: any) => {
     e.preventDefault();
+    const carData = {
+      price: registrationInputs.price,
+      brand: registrationInputs.brand,
+      name: registrationInputs.name,
+      forBid: registrationInputs.forBid,
+      condition: registrationInputs.condition,
+      model: registrationInputs.model,
+      year: registrationInputs.year,
+      color: registrationInputs.color,
+      description: registrationInputs.description,
+      fuelType: registrationInputs.fuelType,
+      mileage: registrationInputs.mileage,
+    };
+    dispatch(registerCar(carData));
     router.push("/seller");
   };
   return (

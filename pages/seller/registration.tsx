@@ -38,7 +38,7 @@ export default function Registration() {
   const submitForm = (e: any) => {
     e.preventDefault();
     let userData = {
-      name: registrationInputs.firstName + registrationInputs.lastName,
+      name: registrationInputs.firstName + " " + registrationInputs.lastName,
       phoneNumber: registrationInputs.phoneNumber,
       email: registrationInputs.email,
       password: registrationInputs.password,
